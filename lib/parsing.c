@@ -18,7 +18,7 @@ int interpolation(uint16_t channel) {
     }
 
     // Ensure the scaled value is within the 7-bit range (0-127)
-    scaled_value = scaled_value < 0 ? 0 : scaled_value > 127 ? 127 : scaled_value;
+    scaled_value = scaled_value < 0 ? 0 : scaled_value > 127 ? 127 : scaled_value; //It is  a quick way to keep scaled_value between 0 and 127..
 
     return scaled_value;
 }
