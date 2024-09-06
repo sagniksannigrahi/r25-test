@@ -47,7 +47,9 @@ If you are able to compile your code successfully you should see something like 
 Describe what you understood about the problem.
 
 ## Thought Process
-After understanding the problem, describe how you decided to proceed towards solving the question.
+//we are implementing code to control motors for a rover using data received from an RC transmitter. Basically we are implementing code to control a sabrtooth motor driver(we are only trying to control motor 1 using S1 of Sabertooth), connected to drive motors of the rover, using data received from an RC transmitter( the transmitter is configured to transmit data in extended limits). The data from the transmitter is being recieved by a SBUS reciever module nad the data protocol used here.
+//Task 0 ::- Here we just create a fork
+// Task 2::- Here we just add some new function interpolation in the parsing.c area .. here we just check the chanel size if it is greter or less than 2048 .. if it is less then then we just put [[[scaled_value=(2048 - channel) / 16 + 64;]]]and in the else part we use [[scaled_value = (channel - 2048) / 16;]] .. Thats all .. and big brothers i use the BLACKBOX ai. as a helper.
 
 ## Implementation
 How did you decide to implement your solution.
