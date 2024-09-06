@@ -47,3 +47,16 @@ uint16_t *parse_buffer(uint8_t buff[]) {
 
     return channel;
 }
+
+
+
+
+
+// Creating the Interpolation Function Next, I developed an interpolation function called interpolation that takes a 16-bit channel value as input and returns a scaled value between 0 and 127. This function is the key to converting the raw data from the transmitter into a format that the motor driver can understand.
+
+// The Magic of Scaling To scale the channel value, I used a simple yet effective logic. If the channel value is below 2048, I used the formula (2048 - channel) / 16 + 64 to scale the value for backward direction (64-127). On the other hand, if the channel value is 2048 or higher, I used the formula (channel - 2048) / 16 to scale the value for forward direction (0-63).
+
+// Keeping Things in Check To ensure that the scaled value stays within the 7-bit range (0-127), I added a conditional statement to clamp the value. This prevents any unexpected values from causing issues with the motor driver.
+
+// Putting it to the Test To verify that my solution worked, I used sample input data from the RC transmitter and passed it through the parse_buffer function to extract the channel values. Then, I applied the interpolation function to each channel value and checked that the scaled values were within the expected range (0-127).
+
